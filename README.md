@@ -1,16 +1,13 @@
-# leganqun
+# Leganqun
+
+> **leganqun** *лыганқун* /lə.'ɣɑn.qun/ — good job! (p.226, *Badten et al, 2008*)
 
 Texts and tools for Akuzipik revitalization
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## License for accompanying data
 
-A few resources to get you started if this is your first Flutter project:
+This resource is part of the linguistic and cultural heritage of the St. Lawrence Island Yupik people. By accessing this resource, you agree to treat this resource, the St. Lawrence Island Yupik language, the St. Lawrence Island Yupik culture, and the St. Lawrence Island Yupik people with dignity and respect. If you do not agree to these conditions, you may not access this resource and you may not make copies of this resource.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+If you agree to these conditions, you may access this resource under the terms of the Creative Commons Attribution No-Commercial 4.0 license (https://creativecommons.org/licenses/by-nc/4.0/).
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
