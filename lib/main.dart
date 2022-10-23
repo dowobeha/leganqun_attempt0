@@ -13,7 +13,7 @@ class LeganqunApp extends StatelessWidget {
     return MaterialApp(
       title: 'Leganqun',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const LeganqunHomePage(title: 'Leganqun'),
+      home: const LeganqunHomePage(title: 'Leganqun Home Page'),
     );
   }
 }
@@ -60,7 +60,7 @@ class _LeganqunHomePageState extends State<LeganqunHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
+        // Here we take the value from the ®HomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
