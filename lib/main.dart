@@ -1,36 +1,25 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const LeganqunApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class LeganqunApp extends StatelessWidget {
+  const LeganqunApp({super.key});
 
-  // This widget is the root of your application.
+  // This widget is the root of the Leganqun app
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Leganqun',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Leganqun'),
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: const LeganqunHomePage(title: 'Leganqun'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class LeganqunHomePage extends StatefulWidget {
+  const LeganqunHomePage({super.key, required this.title});
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -44,10 +33,10 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<LeganqunHomePage> createState() => _LeganqunHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _LeganqunHomePageState extends State<LeganqunHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
