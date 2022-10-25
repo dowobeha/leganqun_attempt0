@@ -1,49 +1,38 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:universal_platform/universal_platform.dart';
 
-void main() {
-  runApp(const LeganqunApp());
-}
+void main() => runApp(LeganqunApp());
+
+final toolbarTextStyle = TextStyle(color: Colors.white, fontSize: 16.0);
 
 class LeganqunApp extends StatelessWidget {
-  const LeganqunApp({super.key});
-
-  // This widget is the root of the Leganqun app
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    if (UniversalPlatform.isIOS | UniversalPlatform.isMacOS) {
-      return CupertinoApp(
-        title: 'Leganqun',
-        theme: CupertinoThemeData(brightness: Brightness.dark),
-        home: const LeganqunHomePage(title: 'Leganqun Home Page'),
-      );
-    } else {
-      return MaterialApp(
-        title: 'Leganqun',
-        theme: ThemeData(primarySwatch: Colors.blue),
-        home: const LeganqunHomePage(title: 'Leganqun Home Page'),
-      );
-    }
+    return PlatformApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Leganqun',
+      home: LeganqunHomePage(title: 'Leganqun!'),
+    );
   }
 }
-
 class LeganqunHomePage extends StatefulWidget {
-  const LeganqunHomePage({super.key, required this.title});
-
+  LeganqunHomePage({super.key, required this.title});
   final String title;
-
   @override
-  State<LeganqunHomePage> createState() => _LeganqunHomePageState();
+  _LeganqunHomePageState createState() => _LeganqunHomePageState();
 }
 
 class _LeganqunHomePageState extends State<LeganqunHomePage> {
+
   int _counter = 0;
 
   static const definition = "leganqun\n"
       "лыганқун\n"
       "/lə.'ɣɑn.qun/"
-      "   — good job! (p.226, *Badten et al, 2008*)";
+      "   — good job HI CLASS! (p.226, *Badten et al, 2008*)";
 
   FloatingActionButton incrementButton() {
     return FloatingActionButton(
@@ -58,49 +47,22 @@ class _LeganqunHomePageState extends State<LeganqunHomePage> {
       _counter++;
     });
   }
-
   @override
   Widget build(BuildContext context) {
-    if (UniversalPlatform.isIOS | UniversalPlatform.isMacOS) {
-      return CupertinoPageScaffold(
-        // Uncomment to change the background color
-        // backgroundColor: CupertinoColors.systemPink,
-        navigationBar: const CupertinoNavigationBar(
-          middle: Text("Leganqun"),
-        ),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Center(
-                child: Text(definition + "\n"
-                    'You have pressed the button $_counter times.'),
-              ),
-              const SizedBox(height: 20.0),
-              Center(
-                child: CupertinoButton.filled(
-                  onPressed: () => setState(() => _counter++),
-                  child: const Icon(CupertinoIcons.add),
-                ),
-              ),
-            ],
+    return PlatformScaffold(
+        appBar: PlatformAppBar(
+          title: Text(
+            widget.title,
+            style: toolbarTextStyle,
           ),
         ),
-      );
-    } else {
-      return Scaffold(
-        appBar: AppBar(title: Text(widget.title)),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              const Text(definition),
-              Text('$_counter', style: Theme.of(context).textTheme.headline4)
-            ],
-          ),
-        ),
-        floatingActionButton: incrementButton(), // This trailing comma makes auto-formatting nicer for build methods.
-      );
-    }
+        body: ListView(
+          children: <Widget>[
+            Text(definition),
+            Text("You have pressed the button ${_counter} times."),
+            incrementButton()
+          ]
+        )
+    );
   }
 }
